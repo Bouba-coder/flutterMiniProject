@@ -1,0 +1,2 @@
+# flutterMiniProject
+A training app.
