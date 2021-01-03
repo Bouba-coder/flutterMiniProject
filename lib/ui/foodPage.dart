@@ -14,7 +14,7 @@ class _FoodPageState extends State<FoodPage> {
         centerTitle: true,
       ),
       body: new Center(
-        child: new Text("This the home page."),
+        child: new Text("This the food page."),
       ),
     );
   }

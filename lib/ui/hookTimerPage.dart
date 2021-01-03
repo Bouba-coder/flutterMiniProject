@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class HtimerPage extends StatefulWidget {
+class HTimerPage extends StatefulWidget {
   @override
-  _HtimerPageState createState() => _HtimerPageState();
+  _HTimerPageState createState() => _HTimerPageState();
 }
 
-class _HtimerPageState extends State<HtimerPage> {
+class _HTimerPageState extends State<HTimerPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(

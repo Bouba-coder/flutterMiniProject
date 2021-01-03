@@ -32,8 +32,8 @@ class _MyBottomBarNavigationState extends State<MyBottomBarNavigation> {
   final List<Widget> _childrenIcon = [
     HomePage(),
     TimerPage(),
-    HtimerPage(),
     FoodPage(),
+    HTimerPage(),
   ];
 
   //icon page changed method
