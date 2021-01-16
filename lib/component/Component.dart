@@ -60,7 +60,8 @@ class Component{
         color: Colors.grey,
         borderRadius: BorderRadius.all(Radius.circular(60.0)),
         border: Border.all(color: Colors.black, width: 2.1),
-        image: DecorationImage(image: NetworkImage("https://picsum.photos/400/500"), fit: BoxFit.contain),
+        //image: DecorationImage(image: NetworkImage("https://picsum.photos/400/500"), fit: BoxFit.contain),
+        image: DecorationImage(image: NetworkImage("https://picsum.photos/id/237/200/300"), fit: BoxFit.contain),
       ),
     );
   }
