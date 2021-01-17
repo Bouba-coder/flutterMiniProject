@@ -1,6 +1,5 @@
 import 'dart:async';
-
-import 'package:flutter/cupertino.dart';
+//import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 //import 'package:flutterMiniProject/class/Timer.dart';
 
@@ -81,7 +80,7 @@ class _TimerPageState extends State<TimerPage> {
                 child: Container(
                   alignment: Alignment.center,
                   child: Text(
-                    //timer init
+                    //timer
                     _stopTimeToDisplay,
                     style: TextStyle(
                       fontSize: 40.0,

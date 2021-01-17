@@ -4,9 +4,10 @@ import 'package:flutterMiniProject/ui/timerPage.dart';
 import 'package:flutterMiniProject/ui/foodPage.dart';
 import 'package:flutterMiniProject/ui/hookTimerPage.dart';
 
-//router and bottom bar navigation
+//entry point
 void main() => runApp(new MaterialApp(
       home: MyApp(),
+      debugShowCheckedModeBanner: false,
     ));
 
 class MyApp extends StatelessWidget {
@@ -25,9 +26,9 @@ class MyBottomBarNavigation extends StatefulWidget {
 
 //bottom bar content class
 class _MyBottomBarNavigationState extends State<MyBottomBarNavigation> {
+
   //indexIcons init
   int _currentIconIdex = 0;
-
   //list pages widgets
   final List<Widget> _childrenIcon = [
     HomePage(),
@@ -53,9 +54,9 @@ class _MyBottomBarNavigationState extends State<MyBottomBarNavigation> {
         unselectedItemColor: Colors.black,
         selectedItemColor: Colors.green,
 
-        //onTapFunction (void)
+        //onTapFunction
         onTap: iconTapped,
-        //flutter current index function
+        //flutter current index
         currentIndex: _currentIconIdex,
         items: [
           BottomNavigationBarItem(

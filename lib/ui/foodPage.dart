@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import to compare two tab
+//import to compare two arraylists
 import 'package:collection/collection.dart';
 
 class FoodPage extends StatefulWidget {
@@ -8,7 +8,8 @@ class FoodPage extends StatefulWidget {
 }
 
 class _FoodPageState extends State<FoodPage> {
-  //List of ingredients
+
+  //List of ingredients for checklist
   Map<String, bool> _ingrediens = {
     'Pain' : false,
     'Viande hachée' : false,
@@ -25,20 +26,24 @@ class _FoodPageState extends State<FoodPage> {
     'Oeufs' : false,
   };
 
-  //an other tab
+  //array for put the choice ingredients
   var _tab = [];
+  //tab for comparing between choice ingredients array and burger ingredients array
   var _tabCompar = ['Pain','Oignon', 'Frômage', 'Tomate', 'Salade', 'Moutarde', 'Ketchup', 'Steak'];
+  //boolean for result
   bool _verif;
-  //equality function
+  //equality function(two arraylists)
   Function eq = const ListEquality().equals;
 
-  //burger
+  //burger result component
   _burger(String _ingredient, Object textColor, Object _iconName, double _iconSize){
     return TextButton.icon(
           icon: Icon(_iconName, size: _iconSize),
           label: Text(_ingredient, style: TextStyle(color: textColor, fontSize: 25.2), overflow: TextOverflow.ellipsis)
       );
   }
+
+  //putting ingredients in array and compare to burger ingredients array
   _getItems(){
     _tab.clear();
    setState(() {
@@ -54,23 +59,22 @@ class _FoodPageState extends State<FoodPage> {
            _verif = false;
           print("Ca ne match pas : $_verif");
          }
-         //_tab1.add(key);
        }
-       // Printing all selected items on Terminal screen.
-
      });
-
    });
+
+    // Printing all selected items on Terminal screen.
     print("le tableau _getItems : ${_tab}");
     print("le tableau _tabCompar : ${_tabCompar}");
     print("le tableau _verif : ${_verif}");
 
+    //result
     if(_verif == true) {
       showDialog(
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: const Text('Thanks!'),
+            title: const Text('Burger Ingredients'),
             //content: Text('You typed "${_tab.map((key) => key)}".'),
             content: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -103,8 +107,8 @@ class _FoodPageState extends State<FoodPage> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: const Text('Thanks!'),
-            content: Text('You typed : Vous n\'aurez pas de burger'),
+            title: const Text('An other ingredients'),
+            content: Text('Bad ingredients for a burger : ${_tab.map((key) => key)}'),
             actions: <Widget>[
               FlatButton(
                 onPressed: () {
@@ -129,7 +133,7 @@ class _FoodPageState extends State<FoodPage> {
       ),
       body: new Column(
         children: <Widget>[
-          //list items
+          //listview items
           Expanded(
             child :
             ListView(
@@ -153,7 +157,7 @@ class _FoodPageState extends State<FoodPage> {
             color: Colors.green,
             textColor: Colors.white,
             splashColor: Colors.grey,
-            padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 20),
             onPressed: _getItems,
           ),
           //Text("${_getItems()}"),

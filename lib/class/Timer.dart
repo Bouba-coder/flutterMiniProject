@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+//timer class (not finished)
 class Timer extends StatefulWidget
 {
   //constructor
