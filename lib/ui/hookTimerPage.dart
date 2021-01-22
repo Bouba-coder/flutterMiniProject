@@ -11,13 +11,14 @@ class HTimerPage extends HookWidget {
     //variables
     var timerController;
     //timer var
+    final _hours = useState(0.0);
     final _minutes = useState(0.0);
     final _seconds = useState(0.0);
 
     // animationController of HookWidget
     final _timerController = useAnimationController(
         duration: Duration(
-            minutes: _minutes.value.toInt(), seconds: _seconds.value.toInt()));
+            hours: _hours.value.toInt(), minutes: _minutes.value.toInt(), seconds: _seconds.value.toInt()));
 
     //animationController method to reset timer after being completed...
     _timerController.addStatusListener((status) {
@@ -51,8 +52,8 @@ class HTimerPage extends HookWidget {
                 return Text(
                   //timer text
                   _timerController.isAnimating == false
-                      ? '${_timerController.duration.inMinutes}:${(_timerController.duration.inSeconds % 60).toString().padLeft(2, '0')}'
-                      : '${duration.inMinutes}:${(duration.inSeconds % 60).toString().padLeft(2, '0')}',
+                      ? '${_timerController.duration.inHours}:${_timerController.duration.inMinutes % 60 }:${(_timerController.duration.inSeconds % 60).toString().padLeft(2, '0')}'
+                      : '${duration.inHours}:${duration.inMinutes % 60}:${(duration.inSeconds % 60).toString().padLeft(2, '0')}',
                   style: TextStyle(fontSize: 60.0, fontStyle: FontStyle.italic),
                 );
               },
@@ -91,19 +92,35 @@ class HTimerPage extends HookWidget {
               ),
             ),
           //slider for change minutes and seconds values
+          Text('Hours', style: TextStyle(fontSize: 18, color: Colors.black),),
+          Slider(
+            inactiveColor: Colors.grey,
+            activeColor: Colors.green,
+            value: _hours.value,
+            min: 0.0,
+            max: 60.0,
+            onChanged: (value) {
+              if (_timerController.isAnimating == false) {
+                _hours.value = value;
+              }
+            },
+            divisions: 60,
+            label: _hours.value.toString(),
+          ),
+          //slider for change minutes and seconds values
           Text('Minutes', style: TextStyle(fontSize: 18, color: Colors.black),),
           Slider(
             inactiveColor: Colors.grey,
             activeColor: Colors.green,
             value: _minutes.value,
             min: 0.0,
-            max: 10.0,
+            max: 60.0,
             onChanged: (value) {
               if (_timerController.isAnimating == false) {
                 _minutes.value = value;
               }
             },
-            divisions: 10,
+            divisions: 60,
             label: _minutes.value.toString(),
           ),
           Text('Second', style: TextStyle(fontSize: 18, color: Colors.black),),
@@ -118,7 +135,7 @@ class HTimerPage extends HookWidget {
                 _seconds.value = value;
               }
             },
-            divisions: 10,
+            divisions: 30,
             label: _seconds.value.toString(),
           ),
           //spacing

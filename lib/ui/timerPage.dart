@@ -1,7 +1,7 @@
 import 'dart:async';
 //import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutterMiniProject/class/Timer.dart';
+import 'package:flutterMiniProject/class/Timer.dart';
 
 class TimerPage extends StatefulWidget {
   @override
@@ -44,6 +44,7 @@ class _TimerPageState extends State<TimerPage> {
     _swatch.start();
     startTimer();
   }
+
 
   //timer stop function
   void stopWatch(){

@@ -9,7 +9,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-
   //component object init
   var _card = new Component();
 
@@ -27,8 +26,8 @@ class _HomePageState extends State<HomePage> {
           alignment: Alignment.topCenter,
           children: <Widget>[
             //calling method with argument
-            _card.getCard(350, 300, 5.5, "Timer", "Timer est un projet développé en 2021, ce projet utilise flutter et dart. Il est composé de quatre pages : une Page d'accueil, un Chronometer, un minuteur et d'un page de proposition de plat.", "clicker"),
-            _card.getAvatar(),
+            _card.getCard(350, 300, 5.5, "Timer", "Timer est un projet développé en 2021, ce projet utilise flutter et dart. Il est composé de quatre pages : une Page d'accueil, un Chronometer, un minuteur et d'un page de proposition de plat.", "Click"),
+            _card.getAvatar("https://picsum.photos/id/237/200/300",150.0,150.0),
           ],
         ),
       ),
