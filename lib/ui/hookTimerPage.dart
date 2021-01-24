@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutterMiniProject/class/Timer.dart';
+//import 'package:flutterMiniProject/class/stopTimer.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 //timer with HookWidget class

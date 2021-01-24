@@ -45,6 +45,9 @@ flutter:
     - family: SaladIcon
       fonts:
         - asset: asset/icon/SaladIcon.ttf
+    - family: VegetablesIcon
+      fonts:
+        - asset: asset/icon/VegetablesIcon.ttf
   assets:
       - asset/image/boubou.png
 

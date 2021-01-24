@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-//import to compare two arraylists
-import 'package:collection/collection.dart';
-import 'package:flutterMiniProject/asset/burgerIcon.dart';
+//food class
 import 'package:flutterMiniProject/class/Food.dart';
-import 'package:flutterMiniProject/component/Component.dart';
+
 
 class FoodPage extends StatefulWidget {
   @override
@@ -11,51 +9,8 @@ class FoodPage extends StatefulWidget {
 }
 
 class _FoodPageState extends State<FoodPage> {
-
   //new object init
-  Component _component = new Component();
   Food _burger = new Food();
-
-  //get burger result
-  _getresult(){
-    //result
-    if(_burger.getItems() == true) {
-      showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: const Text('Burger Ingredients'),
-            //content: Text('You typed "${_tab.map((key) => key)}".'),
-            content: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                _component.burger("Pain", Colors.amberAccent, Icons.breakfast_dining, 18.0),
-                _component.burger("Salade", Colors.green, SaladIcon.salade, 18.0),
-                _component.burger("Tomate", Colors.red, Icons.breakfast_dining, 18.0),
-                _component.burger("Frômage", Colors.yellow, Icons.breakfast_dining, 18.0),
-                _component.burger("Steak", Colors.brown, Icons.breakfast_dining, 18.0),
-                _component.burger("Frômage", Colors.yellow, Icons.breakfast_dining, 18.0),
-                _component.burger("Ketchup", Colors.redAccent, Icons.breakfast_dining, 18.0),
-                _component.burger("Moutarde", Colors.yellow, Icons.breakfast_dining, 18.0),
-                _component.burger("Pain", Colors.amberAccent, Icons.breakfast_dining, 18.0),
-            ],),
-            actions: <Widget>[
-              FlatButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: const Text('OK'),
-              ),
-            ],
-          );
-        },
-      );
-    }
-    else
-      _component.show("You choose bad ingredients for a burger : ${_burger.tab.map((key) => key)}", context);
-  }
-
 
   @override
   Widget build(BuildContext context) {
@@ -92,12 +47,12 @@ class _FoodPageState extends State<FoodPage> {
             textColor: Colors.white,
             splashColor: Colors.grey,
             padding: EdgeInsets.fromLTRB(10, 10, 10, 20),
-            onPressed: _getresult,
-            /*onPressed: (){
+            //onPressed: _getresult,
+            onPressed: (){
               setState(() {
-                ing.getItems();
+                _burger.getItems(context);
               });
-            },*/
+            },
           ),
           //Text("${ing.getItems()}"),
         ],

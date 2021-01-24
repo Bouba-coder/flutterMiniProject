@@ -79,7 +79,7 @@ class Component {
   }
 
 
-  //imageAvatar  function
+  //imageAvatar  component
   Container getAvatar(String imageLink, double containerWidth, double containerHeigh) {
     return Container(
       width: containerWidth,
@@ -99,7 +99,7 @@ class Component {
   //burger component
   burger(String _ingredient, Object textColor, Object _iconName, double _iconSize){
     return TextButton.icon(
-        icon: Icon(_iconName, size: _iconSize),
+        icon: Icon(_iconName, size: _iconSize, color: Colors.black),
         label: Text(_ingredient, style: TextStyle(color: textColor, fontSize: 25.2), overflow: TextOverflow.ellipsis)
     );
   }
